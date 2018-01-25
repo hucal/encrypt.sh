@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$#" -ne 2 ] && [ "$#" -ne 1 ] ; then 
-    echo Usage: $0 input [create_tarball]
+    echo Usage: $0 FILENAME [--tar]
     exit 0
 fi
 
@@ -35,3 +35,5 @@ printf "%s %s\n" "$BYTES" "$SHA256" >> $SIGN
 set +x
 gpg --version >> $SIGN
 
+echo Output: $OUT
+echo Verification: $SIGN
