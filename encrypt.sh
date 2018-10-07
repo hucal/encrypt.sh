@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 if [ "$#" -ne 2 ] && [ "$#" -ne 1 ] ; then 
-    echo Usage: $0 FILENAME [--tar]
+    echo "Usage: $0 FILENAME [--tar]"
+    echo "This script creates the files FILENAME.sha256 and FILENAME.aes256"
+    echo ""
+    echo "If --tar is given, FILENAME is compressed into a gzip'd tarball and"
+    echo "FILENAME becomes FILENAME.tgz"
+    echo ""
+    echo "You need at least the .aes256 file to decrypt all contents."
+    echo "The .sha256 file is for insuring data integrity."
     exit 0
 fi
 
